@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF89F7741E4C652C00CAF3D3 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F7731E4C652C00CAF3D3 /* MyAnnotation.swift */; };
 		BFBD84C21E4B672D00F3EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD84C11E4B672D00F3EA24 /* AppDelegate.swift */; };
 		BFBD84C41E4B672D00F3EA24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD84C31E4B672D00F3EA24 /* ViewController.swift */; };
 		BFBD84C71E4B672D00F3EA24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD84C51E4B672D00F3EA24 /* Main.storyboard */; };
 		BFBD84C91E4B672D00F3EA24 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBD84C81E4B672D00F3EA24 /* Images.xcassets */; };
 		BFBD84CC1E4B672D00F3EA24 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBD84CA1E4B672D00F3EA24 /* LaunchScreen.xib */; };
 		BFBD84D81E4B672D00F3EA24 /* ____Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD84D71E4B672D00F3EA24 /* ____Tests.swift */; };
+		BFBD84E21E4B68D900F3EA24 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFBD84E11E4B68D900F3EA24 /* 1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF89F7731E4C652C00CAF3D3 /* MyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
 		BFBD84BC1E4B672D00F3EA24 /* 地图搜索.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "地图搜索.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD84C01E4B672D00F3EA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBD84C11E4B672D00F3EA24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		BFBD84D11E4B672D00F3EA24 /* 地图搜索Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "地图搜索Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD84D61E4B672D00F3EA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFBD84D71E4B672D00F3EA24 /* ____Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____Tests.swift"; sourceTree = "<group>"; };
+		BFBD84E11E4B68D900F3EA24 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				BFBD84C51E4B672D00F3EA24 /* Main.storyboard */,
 				BFBD84C81E4B672D00F3EA24 /* Images.xcassets */,
 				BFBD84CA1E4B672D00F3EA24 /* LaunchScreen.xib */,
+				BF89F7731E4C652C00CAF3D3 /* MyAnnotation.swift */,
 				BFBD84BF1E4B672D00F3EA24 /* Supporting Files */,
 			);
 			path = "地图搜索";
@@ -90,6 +95,7 @@
 		BFBD84BF1E4B672D00F3EA24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFBD84E11E4B68D900F3EA24 /* 1.jpg */,
 				BFBD84C01E4B672D00F3EA24 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD84C71E4B672D00F3EA24 /* Main.storyboard in Resources */,
+				BFBD84E21E4B68D900F3EA24 /* 1.jpg in Resources */,
 				BFBD84CC1E4B672D00F3EA24 /* LaunchScreen.xib in Resources */,
 				BFBD84C91E4B672D00F3EA24 /* Images.xcassets in Resources */,
 			);
@@ -214,6 +221,7 @@
 			files = (
 				BFBD84C41E4B672D00F3EA24 /* ViewController.swift in Sources */,
 				BFBD84C21E4B672D00F3EA24 /* AppDelegate.swift in Sources */,
+				BF89F7741E4C652C00CAF3D3 /* MyAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				BFBD84DD1E4B672D00F3EA24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFBD84DE1E4B672D00F3EA24 /* Build configuration list for PBXNativeTarget "地图搜索Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				BFBD84E01E4B672D00F3EA24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

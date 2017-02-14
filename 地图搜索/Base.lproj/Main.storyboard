@@ -1,25 +1,143 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="地图搜索" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="Blp-5v-E3W"/>
+                        <viewControllerLayoutGuide type="bottom" id="h6s-P3-2aJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcj-ok-51g">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="605"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3j-Op-XZn">
+                                <rect key="frame" x="275" y="503" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1uX-Zb-kqQ"/>
+                                    <constraint firstAttribute="width" constant="50" id="4nR-gg-SCc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Czk-NA-bJ9"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Ya4-2l-VXu"/>
+                                </constraints>
+                                <state key="normal" image="1.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcButtonMenu:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xB4-sc-VGB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akc-yG-GHD">
+                                <rect key="frame" x="283" y="438" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.49019607840000001" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Gut-px-Smj"/>
+                                    <constraint firstAttribute="height" constant="35" id="uo6-7g-2RV"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="医院">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcPlaceType:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="le8-S3-Xfl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-Nn-w7h">
+                                <rect key="frame" x="283" y="438" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.49019607840000001" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="usk-BH-lLd"/>
+                                    <constraint firstAttribute="width" constant="35" id="vQN-je-XDr"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="酒店">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcPlaceType:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1IQ-31-cUt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IV-Lw-a0n">
+                                <rect key="frame" x="283" y="438" width="35" height="35"/>
+                                <color key="backgroundColor" red="0.20784313725490197" green="0.49019607843137253" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="DR7-ld-GPb"/>
+                                    <constraint firstAttribute="height" constant="35" id="tUv-CH-iUE"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="超市">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcPlaceType:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bs0-OU-uS0"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-MR-P5H">
+                                <rect key="frame" x="121" y="28" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="16I-gd-VCH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-lu-mSF">
+                                <rect key="frame" x="443" y="28" width="38" height="30"/>
+                                <color key="backgroundColor" red="0.20597147069999999" green="0.49000852109999998" blue="1" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wou-iw-3qv"/>
+                                </constraints>
+                                <state key="normal" title=" 搜索">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="funcButtonSearch:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3Kg-Cg-H1z"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Pcj-ok-51g" secondAttribute="bottom" constant="-5" id="5cl-I3-zPH"/>
+                            <constraint firstItem="Pcj-ok-51g" firstAttribute="centerX" secondItem="akc-yG-GHD" secondAttribute="centerX" id="66B-hh-mHy"/>
+                            <constraint firstAttribute="centerX" secondItem="dFW-Nn-w7h" secondAttribute="centerX" id="6KY-8k-oTC"/>
+                            <constraint firstAttribute="centerX" secondItem="akc-yG-GHD" secondAttribute="centerX" id="85t-Zk-2EP"/>
+                            <constraint firstItem="L3j-Op-XZn" firstAttribute="top" secondItem="9IV-Lw-a0n" secondAttribute="bottom" constant="30" id="A9f-Hz-Zrd"/>
+                            <constraint firstItem="h6s-P3-2aJ" firstAttribute="top" secondItem="L3j-Op-XZn" secondAttribute="bottom" constant="47" id="Dv1-ys-6X4"/>
+                            <constraint firstItem="L3j-Op-XZn" firstAttribute="top" secondItem="akc-yG-GHD" secondAttribute="bottom" constant="30" id="EKh-L3-R6Z"/>
+                            <constraint firstAttribute="centerX" secondItem="L3j-Op-XZn" secondAttribute="centerX" id="EVg-RP-Coh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIO-lu-mSF" secondAttribute="trailing" constant="20" id="FOY-0J-bem"/>
+                            <constraint firstItem="Pcj-ok-51g" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Tak-Ph-9hy"/>
+                            <constraint firstAttribute="centerX" secondItem="qUd-MR-P5H" secondAttribute="centerX" id="V23-PH-2FX"/>
+                            <constraint firstAttribute="centerX" secondItem="9IV-Lw-a0n" secondAttribute="centerX" id="epP-hA-PC5"/>
+                            <constraint firstItem="L3j-Op-XZn" firstAttribute="top" secondItem="dFW-Nn-w7h" secondAttribute="bottom" constant="30" id="hZf-um-3OH"/>
+                            <constraint firstAttribute="centerX" secondItem="L3j-Op-XZn" secondAttribute="centerX" id="hss-Fy-ABo"/>
+                            <constraint firstItem="Pcj-ok-51g" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ysr-BF-1O9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameButtonHospital" destination="akc-yG-GHD" id="N1c-9l-sM2"/>
+                        <outlet property="nameButtonHotel" destination="dFW-Nn-w7h" id="hD7-Ep-QK3"/>
+                        <outlet property="nameButtonMenu" destination="L3j-Op-XZn" id="4lY-7O-qH3"/>
+                        <outlet property="nameButtonSearch" destination="gIO-lu-mSF" id="K8O-DM-0rA"/>
+                        <outlet property="nameButtonSuperMarket" destination="9IV-Lw-a0n" id="0DD-vl-F9m"/>
+                        <outlet property="nameMKMapViewShow" destination="Pcj-ok-51g" id="Uxf-Ce-VKg"/>
+                        <outlet property="nameTextFieldInputSearchPlace" destination="qUd-MR-P5H" id="TpW-zV-gei"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="249" y="520"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1.jpg" width="255" height="255"/>
+    </resources>
 </document>
