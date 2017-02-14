@@ -12,16 +12,59 @@ import MapKit
 class ViewController: UIViewController,UITextFieldDelegate
 {
     @IBOutlet weak var nameButtonSearch: UIButton!
+    
+    //定义温馨全局变量弹出框
+    var alertController = UIAlertController()
+    //弹出框方法
+    func funcAlertController(str:String)
+    {
+        switch str
+        {
+        case "请输入要搜索的地点":
+            alertController = UIAlertController(title: "温馨提示", message: "请输入要搜索的地点", preferredStyle: UIAlertControllerStyle.Alert)
+            
+        case "还没输入要搜索的地点":
+            alertController = UIAlertController(title: "温馨提示", message: "还没输入要搜索的地点", preferredStyle: UIAlertControllerStyle.Alert)
+            
+        default:
+            true
+        }
+        
+        var cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        var okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: {
+                    action in
+                    println("点击了确定")
+                })
+        alertController.addAction(cancelAction)
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
 
     // 搜索按钮 点击事件
     @IBAction func funcButtonSearch(sender: AnyObject)
     {
+        
+        
         //收起键盘
         nameTextFieldInputSearchPlace.resignFirstResponder()
         
-        if (nameTextFieldInputSearchPlace.text.isEmpty || nameTextFieldInputSearchPlace.text == nil)
+        //判断段头段尾空格
+        var temp = nameTextFieldInputSearchPlace.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        if (nameTextFieldInputSearchPlace.text.isEmpty)
         {
-            println("kong")
+            println("请输入要搜索的地点")
+            funcAlertController("请输入要搜索的地点")
+            initTextField()
+
+        }
+        else if (temp == "")
+        {
+            println("还没输入要搜索的地点")
+            funcAlertController("还没输入要搜索的地点")
+            initTextField()
         }
         else
         {
