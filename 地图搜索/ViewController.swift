@@ -16,34 +16,35 @@ class ViewController: UIViewController,UITextFieldDelegate
     //定义温馨全局变量弹出框
     var alertController = UIAlertController()
     //弹出框方法
-    func funcAlertController(str:String)
+    func funcAlertController(_ str:String)
     {
         switch str
         {
         case "请输入要搜索的地点":
-            alertController = UIAlertController(title: "温馨提示", message: "请输入要搜索的地点", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController = UIAlertController(title: "温馨提示", message: "请输入要搜索的地点", preferredStyle: UIAlertControllerStyle.alert)
             
         case "还没输入要搜索的地点":
-            alertController = UIAlertController(title: "温馨提示", message: "还没输入要搜索的地点", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController = UIAlertController(title: "温馨提示", message: "还没输入要搜索的地点", preferredStyle: UIAlertControllerStyle.alert)
             
         default:
-            true
+            break
+            
         }
         
-        var cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
         
-        var okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.Default, handler: {
+        let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: {
                     action in
-                    println("点击了确定")
+                    print("点击了确定")
                 })
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
 
     // 搜索按钮 点击事件
-    @IBAction func funcButtonSearch(sender: AnyObject)
+    @IBAction func funcButtonSearch(_ sender: AnyObject)
     {
         
         
@@ -51,25 +52,25 @@ class ViewController: UIViewController,UITextFieldDelegate
         nameTextFieldInputSearchPlace.resignFirstResponder()
         
         //判断段头段尾空格
-        var temp = nameTextFieldInputSearchPlace.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let temp = nameTextFieldInputSearchPlace.text?.trimmingCharacters(in: CharacterSet.whitespaces)
         
-        if (nameTextFieldInputSearchPlace.text.isEmpty)
+        if (nameTextFieldInputSearchPlace.text?.isEmpty)!
         {
-            println("请输入要搜索的地点")
+            print("请输入要搜索的地点")
             funcAlertController("请输入要搜索的地点")
             initTextField()
 
         }
         else if (temp == "")
         {
-            println("还没输入要搜索的地点")
+            print("还没输入要搜索的地点")
             funcAlertController("还没输入要搜索的地点")
             initTextField()
         }
         else
         {
             nameMKMapViewShow.removeAnnotations(nameMKMapViewShow.annotations)
-            funcSearchPlaceInMap(nameTextFieldInputSearchPlace.text)
+            funcSearchPlaceInMap(nameTextFieldInputSearchPlace.text!)
 
         }
         
@@ -87,20 +88,20 @@ class ViewController: UIViewController,UITextFieldDelegate
     @IBOutlet weak var nameButtonMenu: UIButton!
     
     //菜单按钮点击事件
-    @IBAction func funcButtonMenu(sender: AnyObject)
+    @IBAction func funcButtonMenu(_ sender: AnyObject)
     {
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             
             self.nameButtonHospital.alpha = 1
             self.nameButtonHotel.alpha = 1
             self.nameButtonSuperMarket.alpha = 1
             
-            self.nameButtonSuperMarket.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.5, 1.5),CGAffineTransformMakeTranslation(-80, -25))
-            self.nameButtonHotel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.5, 1.5),CGAffineTransformMakeTranslation(0, -80))
-            self.nameButtonHospital.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.5, 1.5),CGAffineTransformMakeTranslation(80, -25))
+            self.nameButtonSuperMarket.transform = CGAffineTransform(scaleX: 1.5, y: 1.5).concatenating(CGAffineTransform(translationX: -80, y: -25))
+            self.nameButtonHotel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5).concatenating(CGAffineTransform(translationX: 0, y: -80))
+            self.nameButtonHospital.transform = CGAffineTransform(scaleX: 1.5, y: 1.5).concatenating(CGAffineTransform(translationX: 80, y: -25))
             
            
-            self.nameButtonMenu.transform = CGAffineTransformMakeRotation(0)
+            self.nameButtonMenu.transform = CGAffineTransform(rotationAngle: 0)
             
             }, completion: nil)
 
@@ -115,7 +116,7 @@ class ViewController: UIViewController,UITextFieldDelegate
     //SuperMarket 的tag为1
     //Hospital    的tag为2
     //Hotel       的tag为3
-    @IBAction func funcPlaceType(sender: AnyObject)
+    @IBAction func funcPlaceType(_ sender: AnyObject)
     {
         
         funcResetButton()
@@ -162,9 +163,9 @@ class ViewController: UIViewController,UITextFieldDelegate
     func initNameButtonMenu()
     {
         self.nameButtonMenu.alpha = 0
-        UIView.animateWithDuration(1, delay: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animate(withDuration: 1, delay: 0.5, options: UIViewAnimationOptions(), animations: { () -> Void in
             self.nameButtonMenu.alpha = 1
-            self.nameButtonMenu.transform = CGAffineTransformMakeRotation(3.1415927 * 0.25)
+            self.nameButtonMenu.transform = CGAffineTransform(rotationAngle: 3.1415927 * 0.25)
             
             }, completion: nil)
     }
@@ -172,18 +173,18 @@ class ViewController: UIViewController,UITextFieldDelegate
     //点击地点按钮后，还原按钮方法
     func funcResetButton()
     {
-        UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        UIView.animate(withDuration: 1, delay: 0, options: UIViewAnimationOptions(), animations: { () -> Void in
             
             self.nameButtonHospital.alpha = 0
             self.nameButtonHotel.alpha = 0
             self.nameButtonSuperMarket.alpha = 0
             
-            self.nameButtonSuperMarket.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1, 1),CGAffineTransformMakeTranslation(0, 0))
-            self.nameButtonHotel.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1, 1),CGAffineTransformMakeTranslation(0, 0))
-            self.nameButtonHospital.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1, 1),CGAffineTransformMakeTranslation(0, 0))
+            self.nameButtonSuperMarket.transform = CGAffineTransform(scaleX: 1, y: 1).concatenating(CGAffineTransform(translationX: 0, y: 0))
+            self.nameButtonHotel.transform = CGAffineTransform(scaleX: 1, y: 1).concatenating(CGAffineTransform(translationX: 0, y: 0))
+            self.nameButtonHospital.transform = CGAffineTransform(scaleX: 1, y: 1).concatenating(CGAffineTransform(translationX: 0, y: 0))
             
             
-            self.nameButtonMenu.transform = CGAffineTransformMakeRotation(3.1415927 * 0.25)
+            self.nameButtonMenu.transform = CGAffineTransform(rotationAngle: 3.1415927 * 0.25)
             
             }, completion: nil)
 
@@ -209,7 +210,7 @@ class ViewController: UIViewController,UITextFieldDelegate
     }
     
     //增加兴趣地点
-    func funcAddLocation(title:String,latitude:CLLocationDegrees,longitude:CLLocationDegrees)
+    func funcAddLocation(_ title:String,latitude:CLLocationDegrees,longitude:CLLocationDegrees)
     {
         let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let myAnnotation = MyAnnotation(coordinate: location, title: title)
@@ -217,7 +218,7 @@ class ViewController: UIViewController,UITextFieldDelegate
     }
     
     //搜索方法
-    func funcSearchPlaceInMap(place:String)
+    func funcSearchPlaceInMap(_ place:String)
     {
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = place
@@ -226,12 +227,23 @@ class ViewController: UIViewController,UITextFieldDelegate
         request.region = MKCoordinateRegion(center: initLocation.coordinate, span: span)
         //启动搜索，并且把返回结果保存在数组中
         let search = MKLocalSearch(request: request)
-        search.startWithCompletionHandler { (response:MKLocalSearchResponse!,error: NSError!) -> Void in
-            for item in response.mapItems as! [MKMapItem]
+        search.start { (response:MKLocalSearchResponse?, error:Error?) in
+            for item in (response?.mapItems)! as [MKMapItem]
             {
-                self.funcAddLocation(item.name, latitude: item.placemark.location.coordinate.latitude, longitude: item.placemark.location.coordinate.longitude)
+                self.funcAddLocation(item.name!, latitude: (item.placemark.location?.coordinate.latitude)!, longitude: (item.placemark.location?.coordinate.longitude)!)
             }
+            
         }
+        
+
+        
+//        search.startWithCompletionHandler
+//            {(response:MKLocalSearchResponse!,error: NSError!) -> Void in
+//            for item in response.mapItems as! [MKMapItem]
+//            {
+//                self.funcAddLocation(item.name, latitude: item.placemark.location.coordinate.latitude, longitude: item.placemark.location.coordinate.longitude)
+//            }
+//        }
     }
     
     //初始化textfield
@@ -245,10 +257,10 @@ class ViewController: UIViewController,UITextFieldDelegate
         nameTextFieldInputSearchPlace.delegate = self
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         
-        println("ShouldReturn")
+        print("ShouldReturn")
         self.funcButtonSearch(nameTextFieldInputSearchPlace)
         return true
     }
