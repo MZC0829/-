@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF6744F51E520EAB00F296BF /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6744F41E520EAB00F296BF /* second.png */; };
+		BF6744F71E520FF400F296BF /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6744F61E520FF400F296BF /* circle.png */; };
+		BF6744F91E52100000F296BF /* minute.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6744F81E52100000F296BF /* minute.png */; };
+		BF6744FB1E52100A00F296BF /* hour.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6744FA1E52100A00F296BF /* hour.png */; };
 		BF89F7841E4C9E1A00CAF3D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F7831E4C9E1A00CAF3D3 /* AppDelegate.swift */; };
 		BF89F7861E4C9E1A00CAF3D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F7851E4C9E1A00CAF3D3 /* ViewController.swift */; };
 		BF89F7891E4C9E1A00CAF3D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF89F7871E4C9E1A00CAF3D3 /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF6744F41E520EAB00F296BF /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		BF6744F61E520FF400F296BF /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		BF6744F81E52100000F296BF /* minute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minute.png; sourceTree = "<group>"; };
+		BF6744FA1E52100A00F296BF /* hour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hour.png; sourceTree = "<group>"; };
 		BF89F77E1E4C9E1A00CAF3D3 /* 时钟箭头旋转.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "时钟箭头旋转.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF89F7821E4C9E1A00CAF3D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF89F7831E4C9E1A00CAF3D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,9 +87,9 @@
 			children = (
 				BF89F7831E4C9E1A00CAF3D3 /* AppDelegate.swift */,
 				BF89F7851E4C9E1A00CAF3D3 /* ViewController.swift */,
-				BF89F7871E4C9E1A00CAF3D3 /* Main.storyboard */,
 				BF89F78A1E4C9E1A00CAF3D3 /* Images.xcassets */,
 				BF89F78C1E4C9E1A00CAF3D3 /* LaunchScreen.xib */,
+				BF89F7871E4C9E1A00CAF3D3 /* Main.storyboard */,
 				BF89F7811E4C9E1A00CAF3D3 /* Supporting Files */,
 			);
 			path = "时钟箭头旋转";
@@ -91,6 +99,10 @@
 			isa = PBXGroup;
 			children = (
 				BF89F7821E4C9E1A00CAF3D3 /* Info.plist */,
+				BF6744F61E520FF400F296BF /* circle.png */,
+				BF6744FA1E52100A00F296BF /* hour.png */,
+				BF6744F81E52100000F296BF /* minute.png */,
+				BF6744F41E520EAB00F296BF /* second.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -161,9 +173,11 @@
 				TargetAttributes = {
 					BF89F77D1E4C9E1A00CAF3D3 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 					};
 					BF89F7921E4C9E1A00CAF3D3 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = BF89F77D1E4C9E1A00CAF3D3;
 					};
 				};
@@ -194,7 +208,11 @@
 			files = (
 				BF89F7891E4C9E1A00CAF3D3 /* Main.storyboard in Resources */,
 				BF89F78E1E4C9E1A00CAF3D3 /* LaunchScreen.xib in Resources */,
+				BF6744F71E520FF400F296BF /* circle.png in Resources */,
+				BF6744F91E52100000F296BF /* minute.png in Resources */,
+				BF6744F51E520EAB00F296BF /* second.png in Resources */,
 				BF89F78B1E4C9E1A00CAF3D3 /* Images.xcassets in Resources */,
+				BF6744FB1E52100A00F296BF /* hour.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +309,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -343,6 +361,7 @@
 				INFOPLIST_FILE = "时钟箭头旋转/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -353,6 +372,7 @@
 				INFOPLIST_FILE = "时钟箭头旋转/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -371,6 +391,7 @@
 				INFOPLIST_FILE = "时钟箭头旋转Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/时钟箭头旋转.app/时钟箭头旋转";
 			};
 			name = Debug;
@@ -386,6 +407,7 @@
 				INFOPLIST_FILE = "时钟箭头旋转Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/时钟箭头旋转.app/时钟箭头旋转";
 			};
 			name = Release;
@@ -409,6 +431,7 @@
 				BF89F79F1E4C9E1A00CAF3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF89F7A01E4C9E1A00CAF3D3 /* Build configuration list for PBXNativeTarget "时钟箭头旋转Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +440,7 @@
 				BF89F7A21E4C9E1A00CAF3D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
