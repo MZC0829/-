@@ -18,7 +18,6 @@ class ViewController: UIViewController,UITextFieldDelegate
     @IBOutlet weak var nameButtonHotel: UIButton!
     @IBOutlet weak var nameButtonHospital: UIButton!
     @IBOutlet weak var nameButtonSuperMarket: UIButton!
-    
     // 设置当前位置
     let initLocation = CLLocation(latitude: 22.5390170000 , longitude: 113.9369500000)
     //设置搜索半径
