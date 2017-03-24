@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF4F79621E854A4500ED1A3F /* SearchMap.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4F79611E854A4500ED1A3F /* SearchMap.png */; };
 		BF89F7741E4C652C00CAF3D3 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89F7731E4C652C00CAF3D3 /* MyAnnotation.swift */; };
 		BFBD84C21E4B672D00F3EA24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD84C11E4B672D00F3EA24 /* AppDelegate.swift */; };
 		BFBD84C41E4B672D00F3EA24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD84C31E4B672D00F3EA24 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF4F79611E854A4500ED1A3F /* SearchMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchMap.png; sourceTree = "<group>"; };
 		BF89F7731E4C652C00CAF3D3 /* MyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
 		BFBD84BC1E4B672D00F3EA24 /* 地图搜索.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "地图搜索.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD84C01E4B672D00F3EA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD84E11E4B68D900F3EA24 /* 1.jpg */,
+				BF4F79611E854A4500ED1A3F /* SearchMap.png */,
 				BFBD84C01E4B672D00F3EA24 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -162,7 +165,7 @@
 		BFBD84B41E4B672D00F3EA24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = mzc;
 				TargetAttributes = {
 					BFBD84BB1E4B672D00F3EA24 = {
@@ -203,6 +206,7 @@
 				BFBD84C71E4B672D00F3EA24 /* Main.storyboard in Resources */,
 				BFBD84E21E4B68D900F3EA24 /* 1.jpg in Resources */,
 				BFBD84CC1E4B672D00F3EA24 /* LaunchScreen.xib in Resources */,
+				BF4F79621E854A4500ED1A3F /* SearchMap.png in Resources */,
 				BFBD84C91E4B672D00F3EA24 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,14 +282,17 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -322,8 +329,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -342,6 +351,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -353,6 +363,7 @@
 				INFOPLIST_FILE = "地图搜索/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "snsd.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -365,6 +376,7 @@
 				INFOPLIST_FILE = "地图搜索/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "snsd.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -384,6 +396,7 @@
 				);
 				INFOPLIST_FILE = "地图搜索Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "snsd.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/地图搜索.app/地图搜索";
@@ -400,6 +413,7 @@
 				);
 				INFOPLIST_FILE = "地图搜索Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "snsd.com.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/地图搜索.app/地图搜索";
